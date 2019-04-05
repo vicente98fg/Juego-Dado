@@ -25,12 +25,14 @@ class Atributo
     $f = rand(1, 6);
     $d = rand(1, 6);
     $a = rand(1, 6);
-    echo "<div id='dicef'>$f</div>";
-    echo "<div id='diced'>$d</div>";
-    echo "<div id='dicea'>$a</div>";
+    echo "<div id='lacaja'>";
+    echo "<div id='dicef'><div class='content'>$f</div></div>";
+    echo "<div id='diced'><div class='content'>$d</div></div>";
+    echo "<div id='dicea'><div class='content'>$a</div></div>";
+    echo "</div>";
 
-    $consulta="INSERT INTO `atributos`(`id`, `v`, `f`, `d`, `a`) VALUES ('','$v','$f','$d','$a')";
-    $this->conexion->query($consulta);
+    /*$consulta="INSERT INTO `atributos`(`id`, `v`, `f`, `d`, `a`) VALUES ('','$v','$f','$d','$a')";
+    $this->conexion->query($consulta);*/
 
   }
 
