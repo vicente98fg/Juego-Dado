@@ -5,6 +5,8 @@ require_once('Atributo.php');
 $consulta = new Atributo();
 $consulta->conectar();
 $consulta->diceRoll();
+$consulta->divDiceRoll();
+$consulta->changeAtributes();
 $resultado = $consulta->listarAtributos();  
 
 ?>
@@ -22,6 +24,7 @@ $resultado = $consulta->listarAtributos();
 
 <table>
   <tr>
+    <td><b>ID</b></td>
     <td><b>Atributo 1</b></td>
     <td><b>Atributo 2</b></td>
     <td><b>Atributo 3</b></td>
@@ -30,22 +33,28 @@ $resultado = $consulta->listarAtributos();
 
 
 <?php
-  foreach ($resultado as $arrayAtributo) {
+  foreach ($resultado as $atributo) {
     echo "<tr>";
-    echo "<td><p align='center'>".$arrayAtributo['v']."</p></td>";
-    echo "<td><p align='center'>".$arrayAtributo['f']."</p></td>";
-    echo "<td><p align='center'>".$arrayAtributo['d']."</p></td>";
-    echo "<td><p align='center'>".$arrayAtributo['a']."</p></td>";
+    echo "<td><p align='center'>".$atributo['id']."</p></td>";
+    echo "<td><p align='center'>".$atributo['v']."</p></td>";
+    echo "<td><p align='center'>".$atributo['f']."</p></td>";
+    echo "<td><p align='center'>".$atributo['d']."</p></td>";
+    echo "<td><p align='center'>".$atributo['a']."</p></td>";
     echo "</tr>";
   }
+  
 
 ?>
+
 
 <form action="index.php">
   <input type="submit" name="reroll" id="reroll" value="Volver">
 </form>
 <form action=".php">
   <input type="submit" name="reroll" id="reroll" value="Pirarse de aqui">
+</form>
+<form action="ajustarAtributos.php">
+  <input type="submit" name="reroll" id="reroll" value="Ajustar">
 </form>
 
 </body>
